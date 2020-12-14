@@ -25,7 +25,7 @@ module "db" {
   allowed_security_groups         = ["${aws_security_group.public_security_group.id}"]
   vpc_security_group_ids          = ["${aws_security_group.private_security_group.id}"] 
   instance_type                   = "db.r5.large"
-
+  skip_final_snapshot             = "true"
   tags                             = {
     Environment = "dev"
     Terraform   = "true"
